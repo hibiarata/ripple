@@ -101,6 +101,7 @@ body {
 /* Events List */
 .events-list {
     margin-bottom: 60px;
+    margin-left: 30px;
 }
 
 .section-title {
@@ -188,17 +189,10 @@ body {
     text-decoration: underline;
 }
 
-.event-venue {
+.event-location {
     color: #666;
     font-size: 0.9rem;
-    min-width: 120px;
-    text-align: right;
-}
-
-.event-location {
-    color: #999;
-    font-size: 0.85rem;
-    min-width: 60px;
+    min-width: 160px;
     text-align: right;
 }
 
