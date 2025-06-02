@@ -155,6 +155,7 @@ body {
     border-bottom: 1px solid #f0f0f0;
     align-items: baseline;
     margin-left: 20px;
+    justify-content: flex-end;
 }
 
 .event-item:last-child {
@@ -519,7 +520,7 @@ body {
 
     .event-venue,
     .event-location {
-        text-align: left;
+        text-align: right;
         min-width: auto;
     }
 

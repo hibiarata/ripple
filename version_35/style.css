@@ -101,7 +101,6 @@ body {
 /* Events List */
 .events-list {
     margin-bottom: 60px;
-    margin-left: 30px;
 }
 
 .section-title {
@@ -115,6 +114,7 @@ body {
 
 .year-group {
     margin-bottom: 40px;
+    margin-left: 30px;
 }
 
 .year-header {
@@ -155,7 +155,7 @@ body {
     padding: 8px 0;
     border-bottom: 1px solid #f0f0f0;
     align-items: baseline;
-    margin-left: 20px;
+    margin-left: -10px;
 }
 
 .event-item:last-child {
@@ -505,16 +505,25 @@ body {
     }
 
     .event-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
+        flex-direction: row;
+        align-items: baseline;
         padding: 12px 0;
+        margin-left: 10px;
     }
 
-    .event-venue,
+    .event-date {
+        width: 60px;
+        font-size: 0.8rem;
+    }
+
+    .event-title {
+        flex: 1;
+        margin-right: 8px;
+    }
+
     .event-location {
-        text-align: left;
-        min-width: auto;
+        text-align: right;
+        font-size: 0.8rem;
     }
 
     .newsletter-form {
