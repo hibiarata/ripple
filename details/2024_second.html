@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripple at YEBISU YA PRO - Ripple</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="site-title"><a href="../index.html" style="color: inherit; text-decoration: none;">Ripple</a></h1>
+            <!-- <p class="site-description">岡山のテクノ・ハウスミュージック ナイトイベント</p> -->
+            
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html#events">Events</a></li>
+                    <!-- <li><a href="../index.html#about">About</a></li> -->
+                    <li><a href="../index.html#newsletter">Newsletter</a></li>
+                    <!-- <li><a href="../index.html#community">Community</a></li> -->
+                </ul>
+                <div class="back-link">
+                    <a href="../index.html">← Back to Events</a>
+                </div>
+            </nav>
+        </header>
+
+        <section class="event-detail">
+            <div class="flyer-container">
+                <img src="../images/Ripple_2024_07_20.jpg" alt="Ripple at YEBISU YA PRO" class="flyer-image">
+            </div>
+            
+            <div class="event-header">
+                <h2 class="event-main-title">Ripple</h2>
+                <p class="event-subtitle">at YEBISU YA PRO</p>
+            </div>
+
+            <div class="event-info-grid">
+                <div class="info-section">
+                    <h3 class="info-label">VENUE</h3>
+                    <p class="info-value">YEBISU YA PRO</p>
+                </div>
+
+                <div class="info-section">
+                    <h3 class="info-label">DATE</h3>
+                    <p class="info-value">7/20(Sat)</p>
+                </div>
+
+                <div class="info-section">
+                    <h3 class="info-label">TIME</h3>
+                    <p class="info-value">22:00 open & start</p>
+                </div>
+
+                <div class="info-section">
+                    <h3 class="info-label">ENTRANCE FEE</h3>
+                    <p class="info-value">¥3800</p>
+                </div>
+            </div>
+
+            <div class="lineup-section">
+                <h3 class="section-title">DJ</h3>
+                <ul class="artist-list">
+                    <li class="artist-item">
+                        <span class="artist-name">Jane Fitz</span>
+                    </li>
+                    <li class="artist-item">
+                        <span class="artist-name">Akie</span>
+                    </li>
+                    <li class="artist-item">
+                        <span class="artist-name">HIRAO</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="staff-section">
+                <div class="staff-grid">
+                    <div class="staff-item">
+                        <h4 class="staff-role">DECO</h4>
+                        <p class="staff-name">はおにろ</p>
+                    </div>
+
+                    <div class="staff-item">
+                        <h4 class="staff-role">DESIGN</h4>
+                        <p class="staff-name">nuttsponchon</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-section">
+                <div class="service-group">
+                    <h4 class="service-title">FOOD</h4>
+                    <ul class="service-list">
+                        <li>アルゼンチン懐石すぎはら</li>
+                        <li>SUSHI SONG</li>
+                    </ul>
+                </div>
+
+                <div class="service-group">
+                    <h4 class="service-title">SHOP</h4>
+                    <ul class="service-list">
+                        <li>福中屋records</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sponsor-section">
+                <h4 class="sponsor-title">SUPPORTED BY</h4>
+                <p class="sponsor-name">Carhartt</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">SoundCloud</a>
+                <a href="#">Facebook</a>
+            </div>
+            <div class="footer-info">
+                Contact: info@ripple-tokyo.com<br>
+                © 2025 Ripple
+            </div>
+        </footer>
+    </div>
+
+    <style>
+        /* Event detail specific styles */
+        .event-detail {
+            margin-bottom: 60px;
+        }
+
+        .flyer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+        }
+
+        .flyer-image {
+            max-height: 75vh;
+            max-width: 100%;
+            object-fit: contain;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+        }
+
+        /* Override nav style for details page */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Mobile header spacing override for details page */
+        @media (max-width: 768px) {
+            .header {
+                margin-bottom: 30px;
+            }
+
+            .site-title {
+                font-size: 1.6rem;
+                margin-bottom: 15px;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .back-link {
+                align-self: flex-end;
+            }
+
+            .nav-links {
+                gap: 2px;
+            }
+
+            .nav-links li {
+                margin-bottom: 2px;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+                padding: 4px 0;
+            }
+
+            .back-link a {
+                font-size: 0.9rem;
+            }
+        }
+
+        .back-link a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link a:hover {
+            color: #000;
+        }
+
+        .event-header {
+            margin-bottom: 40px;
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .event-main-title {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #000;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .event-subtitle {
+            color: #666;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .event-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+            padding: 30px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .info-section {
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .info-value {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .lineup-section {
+            margin-bottom: 40px;
+        }
+
+        .artist-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .artist-item {
+            display: flex;
+            align-items: baseline;
+            padding: 8px 0;
+            border-bottom: 1px solid #f8f8f8;
+        }
+
+        .artist-item:last-child {
+            border-bottom: none;
+        }
+
+        .artist-name {
+            font-weight: 500;
+            color: #000;
+            margin-right: 15px;
+        }
+
+        .artist-affiliation {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .staff-section {
+            margin-bottom: 40px;
+        }
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .staff-item {
+            text-align: center;
+        }
+
+        .staff-role {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .staff-name {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .services-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-group {
+            text-align: center;
+        }
+
+        .service-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .sponsor-section {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 40px;
+        }
+
+        .sponsor-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .sponsor-name {
+            color: #555;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .flyer-container {
+                padding: 20px 0;
+                margin-bottom: 30px;
+            }
+
+            .flyer-image {
+                max-height: 60vh;
+            }
+
+            .event-main-title {
+                font-size: 1.5rem;
+            }
+
+            .event-info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .staff-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .services-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .artist-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+        }
+    </style>
+</body>
+</html>
