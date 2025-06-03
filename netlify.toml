@@ -1,4 +1,4 @@
 [build]
-  base = "Version_35"    # 公開したいバージョンのディレクトリ
+  base = "."
   publish = "."         # そのディレクトリ直下にindex.htmlがある場合
   command = ""          # Buildコマンドは不要なので空欄
