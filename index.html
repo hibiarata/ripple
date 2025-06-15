@@ -32,11 +32,18 @@
                 <h3 class="year-header">2025</h3>
                 
                 <div class="event-item">
-                    <div class="event-date">Jul 20</div>
+                    <div class="event-date highlight-date">Jul 20</div>
                     <div class="event-title">
                         <a href="./details/2025_3rd.html">Ripple</a>
                     </div>
                     <div class="event-location">MarugoDeli Ohjigatake, 児島</div>
+                </div>
+                
+                <div class="event-item compact-spacing">
+                    <div class="event-date"></div>
+                    <div class="event-title">
+                    </div>
+                    <div class="event-location reservation-text"><a href="#">申し込み</a></div>
                 </div>
             </div>
             
@@ -78,9 +85,12 @@
             <h2 class="section-title">Newsletter</h2>
             <p>最新のイベント情報やアーティスト情報をお届けします。</p>
             
-            <form class="newsletter-form">
-                <input type="email" placeholder="メールアドレス" required>
-                <button type="submit">Subscribe</button>
+            <form class="newsletter-form" id="newsletter-form">
+                <div class="form-row">
+                    <input type="email" id="newsletter-email" placeholder="メールアドレス" required>
+                    <button type="submit">Subscribe</button>
+                </div>
+                <div id="newsletter-message" class="newsletter-message"></div>
             </form>
         </section>
 
@@ -235,14 +245,66 @@
             });
         });
 
+        // Email validation function
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Show message function
+        function showMessage(message, isError = false) {
+            const messageDiv = document.getElementById('newsletter-message');
+            messageDiv.textContent = message;
+            messageDiv.className = isError ? 'newsletter-message error' : 'newsletter-message success';
+            messageDiv.style.display = 'block';
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+
         // Newsletter form handling
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            if (email) {
-                alert('ありがとうございます！メルマガ登録を受け付けました。');
-                this.querySelector('input[type="email"]').value = '';
+            const email = document.getElementById('newsletter-email').value.trim();
+            
+            if (!email) {
+                showMessage('メールアドレスを入力してください。', true);
+                return;
             }
+            
+            if (!validateEmail(email)) {
+                showMessage('有効なメールアドレスを入力してください。', true);
+                return;
+            }
+            
+            // Show loading message
+            showMessage('登録中...', false);
+            
+            // Send to PHP backend
+            fetch('newsletter.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showMessage(data.message, false);
+                    document.getElementById('newsletter-email').value = '';
+                } else {
+                    showMessage(data.message, true);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showMessage('エラーが発生しました。もう一度お試しください。', true);
+            });
         });
 
         // Simple navigation highlighting
