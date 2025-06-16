@@ -36,14 +36,14 @@
                     <div class="event-title">
                         <a href="./details/2025_3rd.html">Ripple</a>
                     </div>
-                    <div class="event-location">MarugoDeli Ohjigatake, 児島</div>
+                    <div class="event-location">MarugoDeli Ohjigatake, Kojima, Okayama</div>
                 </div>
                 
                 <div class="event-item compact-spacing">
                     <div class="event-date"></div>
                     <div class="event-title">
                     </div>
-                    <div class="event-location reservation-text"><a href="#">申し込み</a></div>
+                    <div class="event-location reservation-text"><a href="https://forms.gle/Dk3r5v1cy8ZWvYRS9">申し込み</a></div>
                 </div>
             </div>
             
@@ -55,7 +55,7 @@
                     <div class="event-title">
                         <a href="./details/2024_second.html">Ripple</a>
                     </div>
-                    <div class="event-location">Yebusiya Pro, 岡山</div>
+                    <div class="event-location">Yebusiya Pro, Okayama</div>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@
                     <div class="event-title">
                         <a href="./details/2023_first.html">Ripple <span>FOLKSTAND 7th anniversary</span></a>
                     </div>
-                    <div class="event-location">Yebusiya Pro, 岡山</div>
+                    <div class="event-location">Yebusiya Pro, Okayama</div>
                 </div>
             </div>
         </section>
@@ -83,7 +83,9 @@
  -->
         <section id="newsletter" class="newsletter">
             <h2 class="section-title">Newsletter</h2>
-            <p>最新のイベント情報やアーティスト情報をお届けします。</p>
+            <p>
+                Rippleからのお知らせ、最新イベントの情報などをお届けします。<br/>
+                We will deliver announcements from Ripple and information on the latest events.</p>
             
             <form class="newsletter-form" id="newsletter-form">
                 <div class="form-row">
@@ -100,16 +102,15 @@
             <a href="#">限定イベント情報</a>
             <a href="#">アーティスト交流</a>
         </section> -->
-
         <footer class="footer">
             <div class="footer-links">
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
+                <a href="https://www.instagram.com/ripple086/">Instagram</a>
+                <!-- <a href="#">Twitter</a>
                 <a href="#">SoundCloud</a>
-                <a href="#">Facebook</a>
+                <a href="#">Facebook</a> -->
             </div>
             <div class="footer-info">
-                Contact: info@ripple-tokyo.com<br>
+                Contact: kotarose086@gmail.com<br>
                 © 2025 Ripple
             </div>
         </footer>
@@ -135,186 +136,6 @@
         </div>
     </div>
 
-    <script>
-        // Image gallery data
-        const eventImages = {
-            'minimal-sessions': [
-                '../images/S__8953921.jpg',
-                '../images/S__8953923.jpg'
-            ]
-        };
-
-        // Modal elements
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-        const modalTitle = document.getElementById('modalTitle');
-        const currentImageSpan = document.getElementById('currentImage');
-        const totalImagesSpan = document.getElementById('totalImages');
-        const closeBtn = document.querySelector('.close');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-
-        let currentImageIndex = 0;
-        let currentEventImages = [];
-
-        // Open modal function
-        function openModal(eventKey, eventTitle) {
-            currentEventImages = eventImages[eventKey] || [];
-            if (currentEventImages.length === 0) return;
-
-            currentImageIndex = 0;
-            modalTitle.textContent = eventTitle;
-            totalImagesSpan.textContent = currentEventImages.length;
-            showImage(currentImageIndex);
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Show image function
-        function showImage(index) {
-            if (currentEventImages.length === 0) return;
-            
-            modalImage.src = currentEventImages[index];
-            currentImageSpan.textContent = index + 1;
-            
-            // Update navigation button visibility
-            prevBtn.style.display = currentEventImages.length > 1 ? 'flex' : 'none';
-            nextBtn.style.display = currentEventImages.length > 1 ? 'flex' : 'none';
-        }
-
-        // Previous image
-        function prevImage() {
-            if (currentEventImages.length <= 1) return;
-            currentImageIndex = (currentImageIndex - 1 + currentEventImages.length) % currentEventImages.length;
-            showImage(currentImageIndex);
-        }
-
-        // Next image
-        function nextImage() {
-            if (currentEventImages.length <= 1) return;
-            currentImageIndex = (currentImageIndex + 1) % currentEventImages.length;
-            showImage(currentImageIndex);
-        }
-
-        // Close modal function
-        function closeModal() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Event listeners
-        document.addEventListener('DOMContentLoaded', function() {
-            // Clickable event listener
-            const clickableEvent = document.querySelector('.clickable-event[data-event="minimal-sessions"]');
-            if (clickableEvent) {
-                clickableEvent.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const eventKey = this.getAttribute('data-event');
-                    const eventTitle = this.querySelector('.event-title a').textContent;
-                    openModal(eventKey, eventTitle);
-                });
-            }
-
-            // Modal close listeners
-            closeBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-
-            // Navigation button listeners
-            prevBtn.addEventListener('click', prevImage);
-            nextBtn.addEventListener('click', nextImage);
-
-            // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                if (modal.style.display === 'block') {
-                    switch(e.key) {
-                        case 'Escape':
-                            closeModal();
-                            break;
-                        case 'ArrowLeft':
-                            prevImage();
-                            break;
-                        case 'ArrowRight':
-                            nextImage();
-                            break;
-                    }
-                }
-            });
-        });
-
-        // Email validation function
-        function validateEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-
-        // Show message function
-        function showMessage(message, isError = false) {
-            const messageDiv = document.getElementById('newsletter-message');
-            messageDiv.textContent = message;
-            messageDiv.className = isError ? 'newsletter-message error' : 'newsletter-message success';
-            messageDiv.style.display = 'block';
-            
-            // Auto hide after 5 seconds
-            setTimeout(() => {
-                messageDiv.style.display = 'none';
-            }, 5000);
-        }
-
-        // Newsletter form handling
-        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('newsletter-email').value.trim();
-            
-            if (!email) {
-                showMessage('メールアドレスを入力してください。', true);
-                return;
-            }
-            
-            if (!validateEmail(email)) {
-                showMessage('有効なメールアドレスを入力してください。', true);
-                return;
-            }
-            
-            // Show loading message
-            showMessage('登録中...', false);
-            
-            // Send to PHP backend
-            fetch('newsletter.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: email
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    showMessage(data.message, false);
-                    document.getElementById('newsletter-email').value = '';
-                } else {
-                    showMessage(data.message, true);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                showMessage('エラーが発生しました。もう一度お試しください。', true);
-            });
-        });
-
-        // Simple navigation highlighting
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
